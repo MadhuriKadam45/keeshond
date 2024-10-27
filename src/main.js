@@ -3,6 +3,9 @@
  * get single breed image: https://dog.ceo/api/breed/keeshond/images/random
  */
 
+// DOM Selection
+const selectE1 = document.querySelector("#dog-breeds");
+
 // This function returns (breeds)
 function getDogsBreed() {
   return fetch(`https://dog.ceo/api/breeds/list/all`)
@@ -14,7 +17,10 @@ function getDogsBreed() {
 function renderOptions() {
   getDogsBreed().then((breeds) => {
     for (let breed of breeds) {
-      console.log(breed);
+      const option = document.createElement("option");
+      option.textContent = breed[0].toUpperCase() + breed.slice(1);
+      option.value = breed;
+      selectE1.appendChild(option);
     }
   });
 }
