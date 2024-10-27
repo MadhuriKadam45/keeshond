@@ -5,7 +5,9 @@
 
 // DOM Selection
 const selectE1 = document.querySelector("#dog-breeds");
+const imageE1 = document.querySelector("#dog-image");
 
+// === Fetch
 // This function returns (breeds)
 function getDogsBreed() {
   return fetch(`https://dog.ceo/api/breeds/list/all`)
@@ -23,6 +25,7 @@ function getDogImage(breed) {
 
 getDogImage("keeshond");
 
+// === Render
 // Render the <option>
 function renderOptions() {
   getDogsBreed().then((breeds) => {
@@ -36,6 +39,12 @@ function renderOptions() {
 }
 
 renderOptions();
+
+selectE1.addEventListener("change", (e) => {
+  const selectedValue = e.target.value;
+
+  getDogImage(selectedValue).then((link) => (imageE1.src = link));
+});
 
 // .then works on promise
 // our custom function is not a promise
