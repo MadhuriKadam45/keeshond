@@ -1,6 +1,6 @@
 /* API Endpoints
  * breeds list: https://dog.ceo/api/breeds/list/all
- * get single breed image: https://dog.ceo/api/breed/keeshond/images/random
+ * get single breed image: https://dog.ceo/api/breed/{breed}/images/random
  */
 
 // DOM Selection
@@ -14,6 +14,16 @@ function getDogsBreed() {
     .catch((err) => console.log(err));
 }
 
+function getDogImage(breed) {
+  return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+    .then((res) => res.json())
+    .then((data) => data.message)
+    .catch((err) => console.log(err));
+}
+
+getDogImage("keeshond");
+
+// Render the <option>
 function renderOptions() {
   getDogsBreed().then((breeds) => {
     for (let breed of breeds) {
