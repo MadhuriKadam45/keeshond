@@ -1,10 +1,12 @@
 # Learnings
+API: To get some data, we used the dogs api rules: to get data we used fetch
+    1. will delay (.then and promises)
+    2. errors will come (catch)
 1. Promise? It means a future value
 2. Async? Means parallel and non-blocking action
 3. To work with promises we use .then and .catch
 4. The fetch function gives us a promise
 5. What we return from .then, we can use in another nested .then
-
 
 # Step
 0. Basics of Network Requests: takes time & errors might occur
@@ -18,11 +20,11 @@
 2. CRUD (create, read, update, delete) on create get
 3. explored the vite bundler
 4. difference b/w npm vs pnpm vs yarn
-5. `pnpm create vite@latest` . (in our current directory) 
+5. `pnpm create vite@latest.`  (in our current directory) 
     Vanilla with JavaScript
     Scaffold (basic project)
 6. `pnpm install` to install all the dependencies
 7. pnpm run dev to start the development sever
 8. Remove unnessary files from the default Scaffold 
 9. create structure with new css (google search)
-10. create 
+10. Create get dog breed function using fetch and .then
