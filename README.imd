@@ -1,4 +1,5 @@
 # Step
+0. Basics of Network Requests: takes time & errors might occur
 1. we explored the dogs api which includes several end points
 2. CRUD (create, read, update, delete) on create get
 3. explored the vite bundler
@@ -6,4 +7,6 @@
 5. `pnpm create vite@latest` . (in our current directory) 
     Vanilla with JavaScript
     Scaffold (basic project)
-6. `pnpm install` to install 
+6. `pnpm install` to install all the dependencies
+7. pnpm run dev to start the development sever
+8. Remove unnessary files from the default Scaffold 
