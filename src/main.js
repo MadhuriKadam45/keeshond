@@ -9,18 +9,24 @@ const imageE1 = document.querySelector("#dog-image");
 
 // === Fetch
 // This function returns (breeds)
-function getDogsBreed() {
-  return fetch(`https://dog.ceo/api/breeds/list/all`)
-    .then((res) => res.json())
-    .then((data) => Object.keys(data.message))
-    .catch((err) => console.log(err));
+async function getDogsBreed() {
+  try {
+    const res = await fetch(`https://dog.ceo/api/breeds/list/all`);
+    const data = await res.json();
+    return Object.keys(data.message);
+  } catch (err) {
+    return console.log(err);
+  }
 }
 
-function getDogImage(breed) {
-  return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-    .then((res) => res.json())
-    .then((data) => data.message)
-    .catch((err) => console.log(err));
+async function getDogImage(breed) {
+  try {
+    const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+    const data = await res.json();
+    return data.message;
+  } catch (err) {
+    return console.log(err);
+  }
 }
 
 getDogImage("keeshond");
